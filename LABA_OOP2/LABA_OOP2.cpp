@@ -80,15 +80,15 @@ public:
         p1 = new Point;
         p2 = new Point;
     }
-   /* Section(int x, int y) {
-        printf("Section(int x, int y)\n");
-        this->x = x;
-        this->y = y;
-    }*/
+    Section(int x1, int y1, int x2, int y2) {
+        printf("Section(int x1, int y1, int x2, int y2)\n");
+        p1 = new Point(x1,y1);
+        p2 = new Point(x2,y2);
+    }
     Section(const Section& s) {
         printf("Section(const Section &s)\n");
-        p1 = s.p1;
-        p2 = s.p2;
+        p1 = new Point(*(s.p1));
+        p2 = new Point(*(s.p2));
     }
     ~Section() {
         //printf("%d, %d\n", x, y);
