@@ -1,5 +1,6 @@
 ﻿#include <iostream>
 #include <conio.h>
+using namespace std;
 
 
 class Point 
@@ -101,11 +102,41 @@ public:
 
 int main()
 {
+    Point p;
+    Point p2(10,10);
+    Point p3(p2);
+    cout << "\n";
+
+
+    Point *dp = new Point;
+    Point *dp2 = new Point(9,11);
+    Point *dp3 = new Point(*dp2);
+    delete dp;
+    delete dp2;
+    delete dp3;
+    cout << "\n";
+
+
+    Point *a = new Point(2,2);
+    a->reset();
+    a->move(7,9);
+    delete a;
+    cout << "\n";
+
+
+    Point* color1 = new ColoredPoint(1, 2, 33);
+    delete color1;
+    ColoredPoint* color2 = new ColoredPoint(1, 2, 33);
+    delete color2;
+    cout << "\n";
+
+
     Section *s1 = new Section;
     Section *s2 = new Section(*s1);
-
     delete s1;
     delete s2;
+    cout << "\n";
+
 
     return 0;
 }
